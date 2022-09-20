@@ -2,9 +2,9 @@ import Zombie from '../zombie';
 
 test.each([
   [
-    'Gimmy',
+    'Name1',
     {
-      name: 'Gimmy',
+      name: 'Name1',
       type: 'Zombie',
       health: 100,
       level: 1,
@@ -13,9 +13,9 @@ test.each([
     },
   ],
   [
-    'Mersedes',
+    'Name123',
     {
-      name: 'Mersedes',
+      name: 'Name123',
       type: 'Zombie',
       health: 100,
       level: 1,
@@ -23,8 +23,11 @@ test.each([
       defence: 10,
     },
   ],
-])('Create hero - "Zombie", testing class Zombie', (params, recieved) => {
-  const expected = new Zombie(params);
+])(
+  'should create hero - "Zombie", testing class Zombie',
+  (params, recieved) => {
+    const expected = new Zombie(params);
 
-  expect(expected).toEqual(recieved);
-});
+    expect(expected).toEqual(recieved);
+  }
+);

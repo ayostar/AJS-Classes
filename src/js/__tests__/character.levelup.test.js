@@ -2,7 +2,7 @@ import Character, { possibleErrorTypes } from '../character';
 
 test.each([
   [
-    ['Alex', 'Bowerman', 0, 1, 25, 25],
+    ['Name', 'Bowerman', 0, 1, 25, 25],
     {
       level: 1,
       attack: 25,
@@ -11,7 +11,7 @@ test.each([
     },
   ],
   [
-    ['Mike', 'Undead', 50, 2, 100, 100],
+    ['Name', 'Undead', 50, 2, 100, 100],
     {
       level: 3,
       attack: 120,
@@ -20,7 +20,7 @@ test.each([
     },
   ],
   [
-    ['Nike', 'Magician', 10, 1, 50, 70],
+    ['Name', 'Magician', 10, 1, 50, 70],
     {
       level: 2,
       attack: 60,
@@ -28,20 +28,23 @@ test.each([
       health: 100,
     },
   ],
-])('Testing method "levelUp", testing class Character', (params, recieved) => {
-  try {
-    const hero = new Character(...params);
-    hero.levelUp();
+])(
+  'should test method "levelUp", testing class Character',
+  (params, recieved) => {
+    try {
+      const hero = new Character(...params);
+      hero.levelUp();
 
-    const expected = {
-      level: hero.level,
-      attack: hero.attack,
-      defence: hero.defence,
-      health: hero.health,
-    };
+      const expected = {
+        level: hero.level,
+        attack: hero.attack,
+        defence: hero.defence,
+        health: hero.health,
+      };
 
-    expect(expected).toEqual(recieved);
-  } catch (error) {
-    expect(error.message).toBe(possibleErrorTypes.levelup);
+      expect(expected).toEqual(recieved);
+    } catch (error) {
+      expect(error.message).toBe(possibleErrorTypes.levelup);
+    }
   }
-});
+);

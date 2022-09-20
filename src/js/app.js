@@ -6,27 +6,33 @@ import Undead from './undead';
 import Zombie from './zombie';
 import Daemon from './daemon';
 
-/* eslint-disable */
+const hero = new Character('SWORDSMAN', 'Swordsman', 100, 1, 25, 25);
 
-const hero = Character('Alex', 'Swordman', 100, 1, 25, 25);
-console.log(hero);
+const heroBowerman = new Bowerman('BOWERMAN');
 
-const heroBowerman = Bowerman('Nike');
-console.log(heroBowerman);
+const heroSwordsman = new Swordsman('SWORDSMAN');
 
-const heroSwordsman = Swordsman('Jilly');
-console.log(heroSwordsman);
+const heroMagician = new Magician('MAGICIAN');
 
-const heroMagician = Magician('Mike');
-console.log(heroMagician);
+const heroUndead = new Undead('UNDEAD');
 
-const heroUndead = Undead('Holly');
-console.log(heroUndead);
+const heroZombie = new Zombie('ZOMBIE');
 
-const heroZombie = Zombie('Jully');
-console.log(heroZombie);
+const heroDaemon = new Daemon('DAEMON');
 
-const heroDaemon = Daemon('Dady');
-console.log(heroDaemon);
+const divHeroes = document.querySelector('#heroes');
 
-/* eslint-enable */
+function showHeroes(_hero) {
+  divHeroes.insertAdjacentHTML(
+    'beforeend',
+    `<div> ${JSON.stringify(_hero)} </div>`
+  );
+}
+
+showHeroes(hero);
+showHeroes(heroBowerman);
+showHeroes(heroSwordsman);
+showHeroes(heroMagician);
+showHeroes(heroUndead);
+showHeroes(heroZombie);
+showHeroes(heroDaemon);

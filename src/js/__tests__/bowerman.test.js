@@ -2,9 +2,9 @@ import Bowerman from '../bowerman';
 
 test.each([
   [
-    'Alex',
+    'Name1',
     {
-      name: 'Alex',
+      name: 'Name1',
       type: 'Bowerman',
       health: 100,
       level: 1,
@@ -13,9 +13,9 @@ test.each([
     },
   ],
   [
-    'Lilly',
+    'Name2',
     {
-      name: 'Lilly',
+      name: 'Name2',
       type: 'Bowerman',
       health: 100,
       level: 1,
@@ -23,8 +23,10 @@ test.each([
       defence: 25,
     },
   ],
-])('Create hero - "Bowerman", testing class Bowerman', (params, recieved) => {
-  const expected = new Bowerman(params);
-
-  expect(expected).toEqual(recieved);
-});
+])(
+  'should create hero - "Bowerman", testing class Bowerman',
+  (params, recieved) => {
+    const expected = new Bowerman(params);
+    expect(expected).toEqual(recieved);
+  }
+);

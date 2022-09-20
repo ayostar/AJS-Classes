@@ -23,6 +23,10 @@ class Character {
     if (typesCharacter.indexOf(type) === -1) {
       throw new Error(possibleErrorTypes.type);
     }
+
+    // if (!typesCharacter.includes(type)) {
+    //   throw new Error(possibleErrorTypes.type);
+    // }
     this.type = type;
 
     this.health = health;

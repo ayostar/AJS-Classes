@@ -2,9 +2,9 @@ import Daemon from '../daemon';
 
 test.each([
   [
-    'Carry',
+    'Name',
     {
-      name: 'Carry',
+      name: 'Name',
       type: 'Daemon',
       health: 100,
       level: 1,
@@ -13,9 +13,9 @@ test.each([
     },
   ],
   [
-    'Jim',
+    'Name',
     {
-      name: 'Jim',
+      name: 'Name',
       type: 'Daemon',
       health: 100,
       level: 1,
@@ -23,8 +23,11 @@ test.each([
       defence: 40,
     },
   ],
-])('Create hero - "Daemon", testing class Daemon', (params, recieved) => {
-  const expected = new Daemon(params);
+])(
+  'should create hero - "Daemon", testing class Daemon',
+  (params, recieved) => {
+    const expected = new Daemon(params);
 
-  expect(expected).toEqual(recieved);
-});
+    expect(expected).toEqual(recieved);
+  }
+);

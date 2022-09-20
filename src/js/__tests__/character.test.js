@@ -2,9 +2,9 @@ import Character, { possibleErrorTypes } from '../character';
 
 test.each([
   [
-    ['Alex', 'Bowerman', 100, 1, 25, 25],
+    ['Name', 'Bowerman', 100, 1, 25, 25],
     {
-      name: 'Alex',
+      name: 'Name',
       type: 'Bowerman',
       health: 100,
       level: 1,
@@ -13,9 +13,9 @@ test.each([
     },
   ],
   [
-    ['Nike', 'Undead', 80, 2, 65, 15],
+    ['Name', 'Undead', 80, 2, 65, 15],
     {
-      name: 'Nike',
+      name: 'Name',
       type: 'Undead',
       health: 80,
       level: 2,
@@ -24,9 +24,9 @@ test.each([
     },
   ],
   [
-    ['Mike', 'Zombie', 10, 3, 15, 100],
+    ['Name', 'Zombie', 10, 3, 15, 100],
     {
-      name: 'Mike',
+      name: 'Name',
       type: 'Zombie',
       health: 10,
       level: 3,
@@ -46,9 +46,9 @@ test.each([
     },
   ],
   [
-    ['John', 'Spiderman', 10, 3, 15, 100],
+    [123, 'Superman', 10, 3, 15, 100],
     {
-      name: 'John',
+      name: 123,
       type: 'Spiderman',
       health: 10,
       level: 3,
@@ -56,7 +56,7 @@ test.each([
       defence: 100,
     },
   ],
-])('Create hero, testing class Character', (params, recieved) => {
+])('should create hero, testing class Character', (params, recieved) => {
   try {
     const expected = new Character(...params);
     expect(expected).toEqual(recieved);

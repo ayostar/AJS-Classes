@@ -2,9 +2,9 @@ import Magician from '../magician';
 
 test.each([
   [
-    'Craus',
+    'Name',
     {
-      name: 'Craus',
+      name: 'Name',
       type: 'Magician',
       health: 100,
       level: 1,
@@ -13,9 +13,9 @@ test.each([
     },
   ],
   [
-    'Totty',
+    'Name',
     {
-      name: 'Totty',
+      name: 'Name',
       type: 'Magician',
       health: 100,
       level: 1,
@@ -23,8 +23,11 @@ test.each([
       defence: 40,
     },
   ],
-])('Create hero - "Magician", testing class Magician', (params, recieved) => {
-  const expected = new Magician(params);
+])(
+  'should create hero - "Magician", testing class Magician',
+  (params, recieved) => {
+    const expected = new Magician(params);
 
-  expect(expected).toEqual(recieved);
-});
+    expect(expected).toEqual(recieved);
+  }
+);

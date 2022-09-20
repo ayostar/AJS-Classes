@@ -2,9 +2,9 @@ import Swordsman from '../swordsman';
 
 test.each([
   [
-    'Piter',
+    'Name',
     {
-      name: 'Piter',
+      name: 'Name',
       type: 'Swordsman',
       health: 100,
       level: 1,
@@ -13,9 +13,9 @@ test.each([
     },
   ],
   [
-    'Lolly',
+    'Name',
     {
-      name: 'Lolly',
+      name: 'Name',
       type: 'Swordsman',
       health: 100,
       level: 1,
@@ -23,8 +23,11 @@ test.each([
       defence: 10,
     },
   ],
-])('Create hero - "Swordsman", testing class Swordsman', (params, recieved) => {
-  const expected = new Swordsman(params);
+])(
+  'should create hero - "Swordsman", testing class Swordsman',
+  (params, recieved) => {
+    const expected = new Swordsman(params);
 
-  expect(expected).toEqual(recieved);
-});
+    expect(expected).toEqual(recieved);
+  }
+);
