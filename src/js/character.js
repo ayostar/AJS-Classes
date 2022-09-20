@@ -1,41 +1,27 @@
-const TYPES_CHARACTER = [
+const typesCharacter = [
   'Bowerman',
-  'Swordsman',
-  'Magician',
   'Daemon',
+  'Magician',
+  'Swordsman',
   'Undead',
   'Zombie',
 ];
 
-const ERRORS = {
-  name: 'Ошибка! Допустимая длина: 2-10 символов.',
-  type: 'Ошибка! Недопустимый тип персонажа.',
-  levelup: 'Ошибка! Невозможно повысить уровень умершего персонажа.',
+const possibleErrorTypes = {
+  name: 'Введите имя от 2 до 10 символов!',
+  type: 'Введите допустимое имя персонажа!',
+  levelup: 'Нельзя повысить левел умершего!',
 };
 
-/*
-      Класс Character (персонаж).
-        Свойства:
-          name - имя (допустимая длина: 2-10 символов);
-          type - тип (допустимые значения:  TYPES_CHARACTER);
-          health - уровень жизни;
-          level - уровень персонажа;
-          attack - атака;
-          defence - защита.
-  
-        Методы:
-          levelUp() - увеличение параметра level на 1;
-          damage(points) - метод меняет внутреннее health (points - это урон).
-  */
 class Character {
   constructor(name, type, health, level, attack, defence) {
-    if (name === undefined || name.length < 2 || name.length > 10) {
-      throw new Error(ERRORS.name);
+    if (!name || name.length < 2 || name.length > 10) {
+      throw new Error(possibleErrorTypes.name);
     }
     this.name = name;
 
-    if (TYPES_CHARACTER.indexOf(type) === -1) {
-      throw new Error(ERRORS.type);
+    if (typesCharacter.indexOf(type) === -1) {
+      throw new Error(possibleErrorTypes.type);
     }
     this.type = type;
 
@@ -47,7 +33,7 @@ class Character {
 
   levelUp() {
     if (this.health === 0) {
-      throw new Error(ERRORS.levelup);
+      throw new Error(possibleErrorTypes.levelup);
     }
 
     this.level += 1;
@@ -63,4 +49,4 @@ class Character {
   }
 }
 
-export { Character as default, TYPES_CHARACTER, ERRORS };
+export { Character as default, typesCharacter, possibleErrorTypes };

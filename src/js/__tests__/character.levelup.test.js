@@ -1,4 +1,4 @@
-import Character, { ERRORS } from '../character';
+import Character, { possibleErrorTypes } from '../character';
 
 test.each([
   [
@@ -42,6 +42,6 @@ test.each([
 
     expect(expected).toEqual(recieved);
   } catch (error) {
-    expect(error.message).toBe(ERRORS.levelup);
+    expect(error.message).toBe(possibleErrorTypes.levelup);
   }
 });

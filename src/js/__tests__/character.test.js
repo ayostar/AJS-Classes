@@ -1,4 +1,4 @@
-import Character, { ERRORS } from '../character';
+import Character, { possibleErrorTypes } from '../character';
 
 test.each([
   [
@@ -61,6 +61,8 @@ test.each([
     const expected = new Character(...params);
     expect(expected).toEqual(recieved);
   } catch (error) {
-    expect([ERRORS.name, ERRORS.type]).toContain(error.message);
+    expect([possibleErrorTypes.name, possibleErrorTypes.type]).toContain(
+      error.message
+    );
   }
 });

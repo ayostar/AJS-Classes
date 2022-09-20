@@ -1,5 +1,5 @@
 import Character from './character';
-import Bowerman from './bowerman.js';
+import Bowerman from './bowerman';
 import Swordsman from './swordsman';
 import Magician from './magician';
 import Undead from './undead';
